@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    - name: pimoroni_trackball
+      url-base: https://github.com/t0bybr/
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -15,5 +17,8 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: 0de55f36bc720b5be3d8880dc856d4d78baf5214
+    - name: pim447
+      remote: pimoroni_trackball
+      revision: main
   self:
     path: config
