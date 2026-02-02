@@ -29,7 +29,8 @@
     };
 };
 &i2c0 {
-  compatible = "nordic,nrf-twim";
+  //compatible = "nordic,nrf-twim";
+  compatible = "pimoroni,pim447";
   status = "okay";
   pinctrl-0 = <&i2c0_default>;
   pinctrl-1 = <&i2c0_sleep>;
@@ -38,16 +39,19 @@
 };
 
 // devices on i2c0
+//input_device_right0: input_device_right0@2a
 
 &i2c0 {
-    input_device_right0: input_device_right0@2a {
+    input_device_right0: input_device_right0@a {
         status = "okay";
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        dr-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        //compatible = "cirque,pinnacle";
+        //reg = <0x2a>;
+        //dr-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         sleep;
-        no-secondary-tap;
-        no-taps;
-        sensitivity = "2x";
+        //no-secondary-tap;
+        //no-taps;
+        //sensitivity = "2x";
+        compatible = "pimoroni,pim447";
+        reg = <0x0A>;
     };
 };
