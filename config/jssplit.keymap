@@ -5,17 +5,75 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Base";
+        /* Qwerty
+        ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓          ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
+        ┃   1 !   ┃   2 @   ┃    3    ┃    4    ┃    5    ┃          ┃    6    ┃    7    ┃    8    ┃    9    ┃    0    ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃    Q    ┃    W    ┃    E    ┃    R    ┃    T    ┃          ┃    Y    ┃    U    ┃    I    ┃    O    ┃    P    ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃    A    ┃    S    ┃    D    ┃    F    ┃    G    ┃          ┃    H    ┃    J    ┃    K    ┃    L    ┃   BSPC  ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃SHIFT  Z ┃    X    ┃    C    ┃    V    ┃    B    ┃          ┃    N    ┃    M    ┃    ,    ┃    .    ┃SHIFT /  ┃
+        ┗━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┛
+                  ┃  WIN    ┃  HOME   ┃   INS   ┃CTRL/ENTR┃          ┃  SPACE  ┃  PG_UP  ┃    UP   ┃  PG_DN  ┃
+                  ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+                  ┃  LALT   ┃   END   ┃   DEL   ┃ TempNUM ┃          ┃ TO NUM  ┃   LEFT  ┃   DOWN  ┃  RIGHT  ┃
+                  ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┣━━━━━━━━━┫          ┣━━━━━━━━━┫━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
+                                                ┃   TAB   ┃          ┃   ESC   ┃
+                                                ┗━━━━━━━━━┛          ┗━━━━━━━━━┛
+        */
+
+        base {
+            label = "BASE";
             bindings = <
-                &kp A &kp B &kp C &kp D &kp E &kp F &kp G &kp H &kp I &kp J
-                &kp K &kp L &kp M &kp N &kp O &kp P &kp Q &kp R &kp S &kp T
-                &kp U &kp V &kp W &kp X &kp Y &kp Z &kp A &kp B &kp C &kp D
-                &kp E &kp F &kp G &kp H &kp I &kp J &kp K &kp L &kp M &kp N
-                &kp O &kp P &kp Q &kp R &kp S &kp T &kp U &kp V
-                &kp W &kp X &kp Y &kp Z &kp A &kp B &kp C &kp D
-                &kp E &kp F
+                &kp N1      &kp N2      &kp N3          &kp N4          &kp N5                              &kp N6      &kp N7          &kp N8          &kp N9          &kp N0
+                &kp Q       &kp W       &kp E           &kp R           &kp T                               &kp Y       &kp U           &kp I           &kp O           &kp P
+                &kp A       &kp S       &kp D           &kp F           &kp G                               &kp H       &kp J           &kp K           &kp L           &kp BSPC
+                &mt LSHFT Z &kp X       &kp C           &kp V           &kp B                               &kp N       &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH
+                            &kp ESC     &kp HOME        &kp INSERT      &mt LCTRL ENTER                     &kp SPACE   &kp PG_UP       &kp UP_ARROW    &kp PG_DN
+                            &kp LALT    &kp END         &kp DELETE      &sl NUM                             &to NUM     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                                                        &kp TAB                             &kp LGUI
             >;
         };
+
+        /* Numbers
+        ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓          ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
+        ┃    F1   ┃    F2   ┃   F3    ┃  VOL+   ┃   MUTE  ┃          ┃  NONE   ┃  NONE   ┃  NONE   ┃  NONE   ┃  NONE   ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃    F4   ┃    F5   ┃    F6   ┃  VOL-   ┃    +    ┃          ┃   = +   ┃    7    ┃    8    ┃    9    ┃  ENTER  ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃    F7   ┃    F8   ┃    F9   ┃   \ |   ┃  - _    ┃          ┃    .    ┃    4    ┃    5    ┃    6    ┃   BSPC  ┃
+        ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+        ┃   F10   ┃   F11   ┃   F12   ┃    /    ┃    *    ┃          ┃    0    ┃    1    ┃    2    ┃    3    ┃   ESC   ┃
+        ┗━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┛
+                  ┃  NONE   ┃  NONE   ┃  NONE   ┃ TO BASE ┃          ┃  SHIFT  ┃   {     ┃     }   ┃    '    ┃
+                  ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+                  ┃  NONE   ┃  NONE   ┃  NONE   ┃  STUDIO ┃          ┃   BASE  ┃   ` ~   ┃   CAPS  ┃    ;    ┃
+                  ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┣━━━━━━━━━┫          ┣━━━━━━━━━┫━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
+                                                ┃  BOOT   ┃          ┃   BOOT  ┃
+                                                ┗━━━━━━━━━┛          ┗━━━━━━━━━┛
+        */
+
+        number {
+            label = "Numbers";
+            bindings = <
+                &kp F1  &kp F2      &kp F3          &kp C_VOL_UP    &kp C_MUTE                          &none       &none           &none           &none           &none
+                &kp F4  &kp F5      &kp F6          &kp C_VOL_DN    &kp PLUS                            &kp EQUAL   &kp N7          &kp N8          &kp N9          &kp ENTER
+                &kp F7  &kp F8      &kp F9          &kp BSLH        &kp MINUS                           &kp DOT     &kp N4          &kp N5          &kp N6          &kp BSPC
+                &kp F10 &kp F11     &kp F12         &kp KP_SLASH    &kp KP_ASTERISK                     &kp N0      &kp N1          &kp N2          &kp N3          &kp ESC
+                        &none       &bt BT_SEL 0    &bt BT_CLR      &to BASE                            &kp LSHIFT  &kp LBKT        &kp RBKT        &kp SQT
+                        &none       &bt BT_SEL 1    &out OUT_TOG    &studio_unlock                      &to BASE    &kp GRAVE       &kp CAPS        &kp SEMI
+                                                                    &bootloader                         &bootloader
+            >;
+        };
+
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
+        };
+
     };
 };
