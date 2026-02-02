@@ -1,0 +1,20 @@
+#include "jssplit.dtsi"
+
+/ {
+    kscan_dongle: kscan_dongle {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&physical_layout_jssplit {
+    kscan = <&kscan_dongle>;
+};
+// == Input devices ==
+// Input devices on peripheral parts
+// Enabling input listeners and input-split to receive input events from peripherals
+&input_split_right0 { status = "okay"; };
+&input_listener_right0 { status = "okay"; };
+

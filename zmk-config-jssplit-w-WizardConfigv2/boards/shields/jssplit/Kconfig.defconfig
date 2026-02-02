@@ -1,0 +1,65 @@
+if SHIELD_JSSPLIT_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "JSsplit"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 1
+
+config BT_MAX_CONN
+  default 6
+
+config BT_MAX_PAIRED
+  default 6
+
+endif
+
+if SHIELD_JSSPLIT_LEFT || SHIELD_JSSPLIT_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+if SHIELD_JSSPLIT_DONGLE
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "JSsplit"
+
+config ZMK_POINTING
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 2
+
+config BT_MAX_CONN
+  default 7
+
+config BT_MAX_PAIRED
+  default 7
+
+endif
+
+# ---------------------
+# Kconfig for shield "jssplit_right" with board "nice_nano_v2"
+# ---------------------
+if BOARD_NICE_NANO_V2 && SHIELD_JSSPLIT_RIGHT
+
+config I2C
+    default y
+
+endif

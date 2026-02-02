@@ -1,0 +1,8 @@
+// == Input devices ==
+// Converting this old central part to a peripheral part
+// - Disabling all input listeners
+// - Disabling input-split from other peripheral parts
+// - Enabling input-split for its own input devices
+// - Assigning devices to input-split
+&input_listener_right0 { status = "disabled"; };
+&input_split_right0 { status = "disabled"; };
