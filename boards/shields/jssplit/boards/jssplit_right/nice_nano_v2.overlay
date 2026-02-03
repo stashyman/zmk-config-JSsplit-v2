@@ -52,7 +52,8 @@
         //no-secondary-tap;
         //no-taps;
         //sensitivity = "2x";
-        compatible = "pimoroni,pim447";
+        //compatible = "pimoroni,pim447";
+        compatible = "zmk,pimoroni-pim447";
         reg = <0x0A>;
     };
 };
