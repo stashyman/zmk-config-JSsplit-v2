@@ -48,7 +48,7 @@
         //compatible = "cirque,pinnacle";
         //reg = <0x2a>;
         //dr-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        sleep;
+        //sleep;
         //no-secondary-tap;
         //no-taps;
         //sensitivity = "2x";
