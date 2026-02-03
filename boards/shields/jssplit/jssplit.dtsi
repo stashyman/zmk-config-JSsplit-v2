@@ -31,13 +31,13 @@
         input_split_right0: input_split_right0@0 {
             compatible = "zmk,input-split";
             reg = <0>;
-            status = "disabled";
+            status = "okay";
         };
     };
 
     input_listener_right0: input_listener_right0 {
         compatible = "zmk,input-listener";
-        status = "disabled";
+        status = "okay";
         device = <&input_split_right0>;
     };
 };
