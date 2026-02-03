@@ -21,7 +21,7 @@
 &physical_layout_jssplit {
     transform = <&matrix_transform0>;
 };
-
+/*
 // Input devices
 / {
     split_inputs {
@@ -40,5 +40,5 @@
         status = "disabled";
         device = <&input_split_right0>;
     };
-};
+}; */
 

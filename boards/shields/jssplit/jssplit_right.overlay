@@ -33,6 +33,8 @@
 &physical_layout_jssplit {
     kscan = <&kscan0>;
 };
+
+/*
 // == Input devices ==
 // Enabling input-split for its own input devices
 // Adding input devices and assigning them to input-split
@@ -40,4 +42,38 @@
     status = "okay";
     device = <&input_device_right0>;
 };
+*/
 
+&pinctrl {
+    i2c1_default: i2c1_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            bias-pull-up;
+		};
+	};
+
+	i2c1_sleep: i2c1_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            low-power-enable;
+		};
+	};
+};
+
+&i2c1 {
+	status = "okay";
+
+	compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+
+    pim447: pim447@0a {
+        compatible = "pimoroni,pim447";
+        reg = <0x0A>;
+		interrupt-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};

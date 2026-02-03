@@ -9,7 +9,9 @@ manifest:
     - name: t0bybr
       url-base: https://github.com/t0bybr/
     - name: genteure
-      url-base: https://github.com/Genteure  
+      url-base: https://github.com/Genteure
+    - name: zmkfirmware
+      url-base: https://github.com/t0bybr  
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -25,5 +27,9 @@ manifest:
     - name: zmk-driver-pim447
       remote: genteure
       revision: 38e1297f87c4a4306633356573ae8673dc7e9ecc
+    - name: zmk
+      remote: zmkfirmware
+      revision: pr2477
+      import: app/west.yml
   self:
     path: config

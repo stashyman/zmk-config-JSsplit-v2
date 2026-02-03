@@ -11,6 +11,7 @@
 // pin control for i2c0
 // - SDA on D2
 // - SCL on D3
+/*
 &pinctrl {
     /* configuration for i2c0 device, default state */
     i2c0_default: i2c0_default {
@@ -63,3 +64,4 @@
         automouse-layer = <1>;
     };
 };
+*/

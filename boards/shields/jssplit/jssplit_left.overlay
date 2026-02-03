@@ -29,9 +29,11 @@
 &physical_layout_jssplit {
     kscan = <&kscan0>;
 };
+
+/*
 // == Input devices ==
 // Input devices on peripheral parts
 // Enabling input listeners and input-split to receive input events from peripherals
 &input_split_right0 { status = "okay"; };
 &input_listener_right0 { status = "okay"; };
-
+*/
