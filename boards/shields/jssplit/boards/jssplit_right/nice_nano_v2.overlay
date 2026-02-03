@@ -55,5 +55,6 @@
         //compatible = "pimoroni,pim447";
         compatible = "zmk,pimoroni-pim447";
         reg = <0x0A>;
+        int-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
