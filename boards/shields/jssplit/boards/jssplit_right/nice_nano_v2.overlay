@@ -30,14 +30,14 @@
     };
 };
 &i2c0 {
-  //compatible = "nordic,nrf-twim";
-  compatible = "nordic,nrf-twi";
+  compatible = "nordic,nrf-twim";
+  //compatible = "nordic,nrf-twi";
   status = "okay";
   pinctrl-0 = <&i2c0_default>;
   pinctrl-1 = <&i2c0_sleep>;
   pinctrl-names = "default", "sleep";
-  //clock-frequency = <I2C_BITRATE_FAST>;
-  clock-frequency = <400000>;
+  clock-frequency = <I2C_BITRATE_FAST>;
+  //clock-frequency = <400000>;
 };
 
 // devices on i2c0
@@ -57,9 +57,10 @@
         //sensitivity = "2x";
         //compatible = "pimoroni,pim447";
         //compatible = "zmk,pimoroni-pim447";
-        compatible = "zephyr,input-device", "zmk,pimoroni-pim447";
+        //compatible = "zephyr,input-device", "zmk,pimoroni-pim447";
+        compatible = "pimoroni,trackball_pim447";
         reg = <0x0A>;
         int-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <1>;
+        //automouse-layer = <1>;
     };
 };
