@@ -55,11 +55,11 @@
         //no-secondary-tap;
         //no-taps;
         //sensitivity = "2x";
-        compatible = "pimoroni,pim447";
-        //compatible = "zmk,pimoroni-pim447";
+        //compatible = "pimoroni,pim447";
+        compatible = "zmk,pimoroni-pim447";
         //compatible = "zephyr,input-device", "zmk,pimoroni-pim447";
         //compatible = "pimoroni,trackball_pim447";
-        reg = <0x0A>;
+        reg = <0xa>;
         int-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         //automouse-layer = <1>;
     };
